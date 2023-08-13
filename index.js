@@ -30,14 +30,11 @@ app.get("/", async (req, res) => {
         // Fetch a random trivia question from the Open Trivia Database API
         const result = await axios.get("https://opentdb.com/api.php?amount=1");
         let dObj = result.data.results[0];
-        const dObjStr = decodeHTML(JSON.stringify(dObj));
-        dObj = JSON.parse(dObjStr);
-        
         const category = dObj.category;
         let difficulty = dObj.difficulty;
         difficulty = difficulty[0].toUpperCase() + difficulty.slice(1);
-        const question = dObj.question;
-        correctAns = dObj.correct_answer;
+        const question = decodeHTML(dObj.question);
+        correctAns = decodeHTML(dObj.correct_answer);
 
         let answers = [];
         if (dObj.type === "boolean") {
@@ -48,6 +45,7 @@ app.get("/", async (req, res) => {
             answers.splice(insInd, 0, correctAns);
         }
 
+        answers = decodeHTML(answers.join("===")).split("===");
         const params = {
             dayOrNight: dayOrNight,
             category: category,
