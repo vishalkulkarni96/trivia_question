@@ -1,0 +1,65 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Trivia-themed styles */
+.quiz-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.question {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.options {
+    margin-top: 10px;
+}
+
+.option {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.verdict {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.back-button {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-button a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-button a:hover {
+    background-color: #0056b3;
+}

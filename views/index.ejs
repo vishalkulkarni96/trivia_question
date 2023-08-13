@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Trivia Question</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Trivia <%= dayOrNight %>!!!</h1>
+        <h2>Answer the following question correctly and win a reward!!!</h2>
+
+        <div class="quiz-container">
+            <h3 class="question" style="display: inline-block;">Category:</h3> <%= category %>
+            <br>
+            <h3 class="question" style="display: inline-block;">Difficulty:</h3> <%= difficulty %>
+            <h3 class="question">Question:</h3>
+            <p><%= question %></p>
+
+            <form action="/submit" method="post" class="options">
+                <% for(let i=0; i<answers.length; i++) {
+                    let ans = answers[i] 
+                %>
+                <label class="option">
+                    <input required type="radio" name="ansOpt" value="<%= ans%>"><%= ans%>
+                </label>
+                <% } %>
+
+                <button type="submit" style="cursor: pointer;">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
