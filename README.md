@@ -17,6 +17,12 @@ Welcome to the Trivia Question Node.js project! This project is a simple trivia 
 - Integrates with the JokeAPI to offer rewards in the form of jokes.
 - Stylish and interactive design using EJS templates and CSS.
 
+![Trivia Question](public\image.png)
+
+![On Correct Answer](public\correct.png)
+
+![On Wrong Answer](public\wrong.png)
+
 ## Installation
 
 1. Clone the repository:
